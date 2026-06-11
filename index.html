@@ -4,7 +4,7 @@
   <title>AR Pizza Demo</title>
 
   <script type="module"
-  src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
   </script>
 
   <style>
@@ -14,28 +14,26 @@
       font-family:Arial;
     }
 
-    h1{
-      text-align:center;
-      padding:20px;
-    }
-
     model-viewer{
-      width:100%;
-      height:80vh;
+      width:100vw;
+      height:100vh;
     }
   </style>
-
 </head>
+
 <body>
 
-<h1>AR Pizza Demo</h1>
-
 <model-viewer
-src="pizza.glb"
-ar
-camera-controls
-auto-rotate
-shadow-intensity="1">
+  src="pizza.glb"
+  ar
+  ar-modes="webxr scene-viewer quick-look"
+  camera-controls
+  auto-rotate
+  shadow-intensity="2"
+  environment-image="neutral"
+  scale="1 1 1"
+  exposure="1"
+  loading="eager">
 </model-viewer>
 
 </body>
