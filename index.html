@@ -15,21 +15,30 @@
             text-align: center;
             background: #f5f5f5;
         }
-        h1 { margin-bottom: 10px; }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
         .price {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 20px;
         }
+
+        /* 3D viewer styling */
         model-viewer {
             width: 100%;
             height: 500px;
-            background: transparent; /* ✅ Makes the background invisible */
+            background: transparent; /* No white background */
         }
-       model-viewer:focus, 
-    model-viewer:focus-visible {
-        outline: none;
-    }
+
+        /* Removes the highlight border when touching or moving the 3D model */
+        model-viewer:focus, 
+        model-viewer:focus-visible {
+            outline: none;
+        }
+
         .info {
             margin-top: 15px;
             font-size: 16px;
@@ -51,8 +60,9 @@
         camera-controls
         auto-rotate
         shadow-intensity="1"
-        exposure="1"
-        scale="0.01 0.01 0.01"> <button slot="ar-button"
+        exposure="1">
+
+        <button slot="ar-button"
             style="
             background:#28a745;
             color:white;
