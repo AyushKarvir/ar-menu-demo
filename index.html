@@ -26,13 +26,10 @@
             height: 500px;
             background: transparent; /* ✅ Makes the background invisible */
         }
-        model-viewer:focus {
-    outline: none;
-}
-
-model-viewer:focus-visible {
-    outline: none;
-}
+       model-viewer:focus, 
+    model-viewer:focus-visible {
+        outline: none;
+    }
         .info {
             margin-top: 15px;
             font-size: 16px;
