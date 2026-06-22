@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizza AR Menu</title>
 
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
     <style>
         body {
@@ -30,7 +30,9 @@
         model-viewer {
             width: 100%;
             height: 500px;
-            background: transparent; /* No white background */
+            background: transparent;
+            /* Added touch-action so the user can still scroll the page vertically over the canvas */
+            touch-action: pan-y; 
         }
 
         /* Removes the highlight border when touching or moving the 3D model */
@@ -42,6 +44,7 @@
         .info {
             margin-top: 15px;
             font-size: 16px;
+            color: #333;
         }
     </style>
 </head>
@@ -64,13 +67,19 @@
 
         <button slot="ar-button"
             style="
-            background:#28a745;
-            color:white;
-            border:none;
-            padding:12px 20px;
-            border-radius:8px;
-            cursor:pointer;
-            font-size:16px;">
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            /* CRUCIAL FIX: Position absolute is required to overlay the custom button inside model-viewer */
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
             🍕 View Pizza in AR
         </button>
 
